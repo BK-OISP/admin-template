@@ -62,6 +62,7 @@
 
   span.material-icons {
     font-size: 1.6rem;
+    outline: none;
   }
 
   .logo {
@@ -99,7 +100,7 @@
 
     &-menu {
       list-style: none;
-      display: none;
+      display: flex;
       flex-direction: column;
       position: absolute;
       right: 20%;
