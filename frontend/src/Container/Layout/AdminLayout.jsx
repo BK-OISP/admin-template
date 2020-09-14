@@ -1,10 +1,12 @@
 import React from "react";
+import Navbar from "../Compoment/Navbar/Navbar";
 
 const AdminLayout = (props) => {
   return (
     <>
-      aa
-      {props.children}
+      <Navbar />
+      <div className="sidebar"></div>
+      <div className="wrapper">{props.children}</div>
     </>
   );
 };
