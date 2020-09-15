@@ -1,15 +1,47 @@
 import React, { useCallback, useEffect, useState } from "react";
 
 import Logo from "../../../assets/img/oisp_favicon.ico";
+import NotiMenu from "./NotiMenu/NotiMenu";
+import SearchForm from "./SearchForm/SearchForm";
+import UserMenu from "./UserMenu/UserMenu";
 
 const Navbar = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isNotiMenuOpen, setIsNotiMenuOpen] = useState(false);
 
-  console.log(isNotiMenuOpen);
-  const toggleNotiMenu = useCallback(() => {
-    setIsNotiMenuOpen((prev) => !prev);
-  }, []);
+  const [handleRightMenu, setHandleRightMenu] = useState([
+    {
+      id: "notiMenu",
+      index: 0,
+      tabIndex: 0,
+      icon: "notifications",
+      active: false,
+    },
+    {
+      id: "userMenu",
+      index: 1,
+      tabIndex: 1,
+      icon: "account_circle",
+      active: false,
+    },
+  ]);
+
+  const toggleRightMenu = useCallback(
+    (index) => {
+      setHandleRightMenu(
+        [...handleRightMenu].map((item) => {
+          if (item.index === index) {
+            return {
+              ...item,
+              active: !item.active,
+            };
+          } else return item;
+        })
+      );
+      console.log(handleRightMenu);
+    },
+    [handleRightMenu]
+  );
 
   const toggleUserMenu = useCallback(() => {
     setIsUserMenuOpen((prev) => !prev);
@@ -28,236 +60,24 @@ const Navbar = () => {
             <img src={Logo} alt="OISP-Logo" className="logo" />
           </li>
         </ul>
-        <form className="navbar-search">
-          <input
-            type="text"
-            name="nav-search"
-            id="nav-search"
-            placeholder="Search something ..."
-          />
-          <span className="material-icons">search</span>
-        </form>
+        <SearchForm />
         <ul className="navbar-nav nav-right">
-          <li className="nav-item dropdown">
-            <div className="nav-link" id="noti-dropdown">
-              <span
-                onFocus={() => {
-                  toggleNotiMenu();
-                }}
-                onBlur={() => toggleNotiMenu()}
-                tabIndex="0"
-                className="material-icons"
-              >
-                notifications
-              </span>
-              <div className="navbar-badge">15</div>
-            </div>
-            {isNotiMenuOpen && (
-              <ul
-                className={`dropdown-menu notification-menu ${
-                  isNotiMenuOpen ? "dropdown-expand" : ""
-                }`}
-              >
-                <div className="dropdown-menu--header">Notifications</div>
-
-                <div className="dropdown-menu--content overlay-scrollbar">
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">bookmark_border</span>
-                      </div>
-                      <span className="dropdown-menu--text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit.
-                        <br />
-                        <span>15/07/2020</span>
-                      </span>
-                    </a>
-                  </li>
-                </div>
-
-                <div className="dropdown-menu--footer">
-                  View All Notifications
-                </div>
-              </ul>
-            )}
-          </li>
-          <li className="nav-item dropdown">
-            <div className="avt" id="user-dropdown">
-              <span
-                className="material-icons "
-                onFocus={() => {
-                  toggleUserMenu();
-                }}
-                onBlur={() => toggleUserMenu()}
-                tabIndex="1"
-              >
-                account_circle
-              </span>
-              {isUserMenuOpen && (
-                <ul
-                  className={`dropdown-menu ${
-                    isUserMenuOpen ? "dropdown-expand" : ""
-                  }`}
-                >
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">person</span>
-                      </div>
-                      <span className="dropdown-menu--text">Profile</span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">settings</span>
-                      </div>
-                      <span className="dropdown-menu--text">Settings</span>
-                    </a>
-                  </li>
-                  <li className="dropdown-menu--item">
-                    <a href="/#" className="dropdown-menu--link">
-                      <div>
-                        <span className="material-icons">clear</span>
-                      </div>
-                      <span className="dropdown-menu--text">Logout</span>
-                    </a>
-                  </li>
-                </ul>
-              )}
-            </div>
-          </li>
+          <NotiMenu
+            id={handleRightMenu[0].id}
+            index={handleRightMenu[0].index}
+            tabIndex={handleRightMenu[0].tabIndex}
+            icon={handleRightMenu[0].icon}
+            active={handleRightMenu[0].active}
+            toggleRightMenu={toggleRightMenu}
+          />
+          <UserMenu
+            id={handleRightMenu[1].id}
+            index={handleRightMenu[1].index}
+            tabIndex={handleRightMenu[1].tabIndex}
+            icon={handleRightMenu[1].icon}
+            active={handleRightMenu[1].active}
+            toggleRightMenu={toggleRightMenu}
+          />
         </ul>
       </div>
     </nav>

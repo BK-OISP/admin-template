@@ -100,7 +100,8 @@
 
     &-menu {
       list-style: none;
-      display: flex;
+      visibility: hidden;
+      opacity: 0;
       flex-direction: column;
       position: absolute;
       right: 20%;
@@ -112,6 +113,7 @@
       padding: unset;
       border-radius: 10px;
       border: 0.125px solid $second-bg-color;
+      transition: all 0.15s ease-in-out;
 
       &--header {
         padding: 20px;
@@ -173,6 +175,8 @@
 
     &-expand {
       display: flex;
+      visibility: visible;
+      opacity: 1;
     }
   }
 
