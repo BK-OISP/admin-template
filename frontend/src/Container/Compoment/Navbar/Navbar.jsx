@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import Logo from "../../../assets/img/oisp_favicon.ico";
 import NotiMenu from "./NotiMenu/NotiMenu";
@@ -6,9 +6,6 @@ import SearchForm from "./SearchForm/SearchForm";
 import UserMenu from "./UserMenu/UserMenu";
 
 const Navbar = () => {
-  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
-  const [isNotiMenuOpen, setIsNotiMenuOpen] = useState(false);
-
   const [handleRightMenu, setHandleRightMenu] = useState([
     {
       id: "notiMenu",
@@ -38,14 +35,9 @@ const Navbar = () => {
           } else return item;
         })
       );
-      console.log(handleRightMenu);
     },
     [handleRightMenu]
   );
-
-  const toggleUserMenu = useCallback(() => {
-    setIsUserMenuOpen((prev) => !prev);
-  }, []);
 
   return (
     <nav>

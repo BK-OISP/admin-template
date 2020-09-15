@@ -1,0 +1,10 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  margin-top: 79px;
+  background: $main-bg-color;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px 1px;
+  overflow: hidden;
+  z-index: 100;
+}

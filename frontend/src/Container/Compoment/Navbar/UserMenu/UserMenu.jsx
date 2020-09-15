@@ -15,16 +15,16 @@ const UserMenu = (props) => {
   ];
   return (
     <li className="nav-item dropdown">
-      <div
-        className="avt"
-        id={id}
-        onClick={() => {
-          toggleRightMenu(index);
-        }}
-        onBlur={() => toggleRightMenu(index)}
-      >
-        <span className="material-icons " tabIndex={tabIndex}>
-          account_circle
+      <div className="avt" id={id}>
+        <span
+          className="material-icons "
+          tabIndex={tabIndex}
+          onClick={() => {
+            toggleRightMenu(index);
+          }}
+          onBlur={() => toggleRightMenu(index)}
+        >
+          {icon}
         </span>
 
         <ul className={`dropdown-menu ${active ? "dropdown-expand" : ""}`}>

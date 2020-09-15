@@ -4,15 +4,15 @@ const NotiMenu = (props) => {
   const { id, index, icon, active, tabIndex, toggleRightMenu } = props;
   return (
     <li className="nav-item dropdown">
-      <div
-        className="nav-link"
-        id={id}
-        onClick={() => {
-          toggleRightMenu(index);
-        }}
-        onBlur={() => toggleRightMenu(index)}
-      >
-        <span tabIndex={tabIndex} className="material-icons">
+      <div className="nav-link" id={id}>
+        <span
+          tabIndex={tabIndex}
+          className="material-icons"
+          onClick={() => {
+            toggleRightMenu(index);
+          }}
+          onBlur={() => toggleRightMenu(index)}
+        >
           {icon}
         </span>
         <div className="navbar-badge">15</div>
