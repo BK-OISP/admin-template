@@ -8,6 +8,7 @@
   overflow: hidden;
   z-index: 100;
   transition: all 0.2s;
+  overflow-y: auto;
 
   &:hover {
     width: 250px;
@@ -97,7 +98,7 @@
     opacity: 0;
     visibility: hidden;
   }
-  90% {
+  65% {
     opacity: 0;
     visibility: hidden;
   }
