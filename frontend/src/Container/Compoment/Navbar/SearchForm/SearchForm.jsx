@@ -2,11 +2,11 @@ import React from "react";
 
 const SearchForm = () => {
   return (
-    <form className="navbar-search">
+    <form className="nvbar--search">
       <input
         type="text"
-        name="nav-search"
-        id="nav-search"
+        name="nv-search"
+        id="nv-search"
         placeholder="Search something ..."
       />
       <span className="material-icons">search</span>

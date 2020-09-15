@@ -3,8 +3,8 @@ import React from "react";
 const NotiMenu = (props) => {
   const { id, index, icon, active, tabIndex, toggleRightMenu } = props;
   return (
-    <li className="nav-item dropdown">
-      <div className="nav-link" id={id}>
+    <li className="nv--item dropdown">
+      <div className="nv--link" id={id}>
         <span
           tabIndex={tabIndex}
           className="material-icons"
@@ -15,7 +15,7 @@ const NotiMenu = (props) => {
         >
           {icon}
         </span>
-        <div className="navbar-badge">15</div>
+        <div className="nvbar--badge">15</div>
       </div>
 
       <ul

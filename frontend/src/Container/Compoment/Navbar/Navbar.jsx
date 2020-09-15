@@ -46,21 +46,21 @@ const Navbar = (props) => {
 
   return (
     <nav>
-      <div className="navbar">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <div className="nav-link">
+      <div className="nvbar">
+        <ul className="nvbar--nav">
+          <li className="nv--item">
+            <div className="nv--link">
               <span className="material-icons" onClick={toggleSidebar}>
                 menu
               </span>
             </div>
           </li>
-          <li className="nav-item">
+          <li className="nv--item">
             <img src={Logo} alt="OISP-Logo" className="logo" />
           </li>
         </ul>
         <SearchForm />
-        <ul className="navbar-nav nav-right">
+        <ul className="nvbar--nav nv--right">
           <NotiMenu
             id={handleRightMenu[0].id}
             index={handleRightMenu[0].index}
