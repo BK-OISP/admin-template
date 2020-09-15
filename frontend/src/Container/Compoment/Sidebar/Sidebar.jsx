@@ -5,9 +5,9 @@ const Sidebar = () => {
     <div className="sidebar">
       <ul className="sidebar-nav">
         <li className="sidebar-nav--item">
-          <div className="sidebar-nav--link">
+          <div className="sidebar-nav--link active">
             <div>
-              <i className="material-icons">dashboard</i>
+              <i className="material-icons">home</i>
             </div>
             <span>Dashboard</span>
           </div>
@@ -17,7 +17,7 @@ const Sidebar = () => {
             <div>
               <i className="material-icons">dashboard</i>
             </div>
-            <span>Dashboard</span>
+            <span>Quản lý tài sản</span>
           </div>
         </li>
         <li className="sidebar-nav--item">

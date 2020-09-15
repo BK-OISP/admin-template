@@ -5,7 +5,8 @@ import NotiMenu from "./NotiMenu/NotiMenu";
 import SearchForm from "./SearchForm/SearchForm";
 import UserMenu from "./UserMenu/UserMenu";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { toggleSidebar } = props;
   const [handleRightMenu, setHandleRightMenu] = useState([
     {
       id: "notiMenu",
@@ -32,7 +33,11 @@ const Navbar = () => {
               ...item,
               active: !item.active,
             };
-          } else return item;
+          } else
+            return {
+              ...item,
+              active: false,
+            };
         })
       );
     },
@@ -45,7 +50,9 @@ const Navbar = () => {
         <ul className="navbar-nav">
           <li className="nav-item">
             <div className="nav-link">
-              <span className="material-icons">menu</span>
+              <span className="material-icons" onClick={toggleSidebar}>
+                menu
+              </span>
             </div>
           </li>
           <li className="nav-item">

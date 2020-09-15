@@ -1,5 +1,5 @@
 .sidebar {
-  width: 250px;
+  width: 82px; // 250px 82px
   height: 100vh;
   position: fixed;
   margin-top: 79px;
@@ -7,6 +7,28 @@
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px 1px;
   overflow: hidden;
   z-index: 100;
+  transition: all 0.2s;
+
+  &:hover {
+    width: 250px;
+  }
+
+  &-expand .sidebar {
+    width: 250px;
+    span {
+      animation: openSidebar 0.2s forwards;
+    }
+  }
+
+  &-close .sidebar {
+    span {
+      animation: closeSidebar 0.2s forwards;
+    }
+  }
+
+  &-expand .wrapper {
+    margin-left: 250px;
+  }
 
   &-nav {
     list-style: none;
@@ -17,9 +39,16 @@
     align-items: center;
     height: 100vh;
 
+    &:hover {
+      span {
+        animation: openSidebar 0.2s forwards;
+      }
+    }
+
     &--item {
       width: 100%;
     }
+
     &--link {
       display: flex;
       align-items: center;
@@ -27,8 +56,26 @@
       text-decoration: none;
       vertical-align: middle;
 
+      &:hover {
+        background: $second-bg-color;
+      }
+
+      &.active {
+        background: $second-bg-color;
+        color: $danger-color;
+      }
+
+      &.active div {
+        border-left: 5px solid $danger-color;
+      }
+
+      &.active i {
+        color: $danger-color;
+        margin-left: -5px;
+      }
+
       i {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         color: $second-color;
         position: absolute;
         left: 50%;
@@ -38,9 +85,39 @@
 
       div {
         min-width: 82px;
-        height: 50px;
+        height: 60px;
         position: relative;
       }
     }
+  }
+}
+
+@keyframes openSidebar {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  90% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes closeSidebar {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  10% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
