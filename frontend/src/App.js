@@ -1,8 +1,9 @@
 import React from "react";
+
 import Dashboard from "./Container/Page/Dashboard/Dashboard";
 
-function App() {
+const App = () => {
   return <Dashboard />;
-}
+};
 
 export default App;
