@@ -6,8 +6,6 @@ const Navbar = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isNotiMenuOpen, setIsNotiMenuOpen] = useState(false);
 
-  //close Dropdown when click outside or reclick
-
   console.log(isNotiMenuOpen);
   const toggleNotiMenu = useCallback(() => {
     setIsNotiMenuOpen((prev) => !prev);
@@ -214,8 +212,8 @@ const Navbar = () => {
               </ul>
             )}
           </li>
-          <li className="nav-item">
-            <div className="avt dropdown" id="user-dropdown">
+          <li className="nav-item dropdown">
+            <div className="avt" id="user-dropdown">
               <span
                 className="material-icons "
                 onFocus={() => {
