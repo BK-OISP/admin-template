@@ -10,6 +10,11 @@ body {
   font-family: "Roboto", sans-serif;
   background: $main-bg-color;
   color: $main-color;
+  line-height: unset;
+}
+
+.wrapper {
+  line-height: 1.5;
 }
 
 .material-icons {

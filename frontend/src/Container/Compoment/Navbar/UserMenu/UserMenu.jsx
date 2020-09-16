@@ -14,7 +14,7 @@ const UserMenu = (props) => {
     { key: "clear", icon: "clear", text: "Log out", link: "#" },
   ];
   return (
-    <li className="nv--item dropdown">
+    <li className="nv--item owdropdown">
       <div className="avt" id={id}>
         <span
           className="material-icons "
@@ -27,15 +27,15 @@ const UserMenu = (props) => {
           {icon}
         </span>
 
-        <ul className={`dropdown-menu ${active ? "dropdown-expand" : ""}`}>
+        <ul className={`owdropdown-menu ${active ? "owdropdown-expand" : ""}`}>
           {USER_MENU.map((item) => {
             return (
-              <li key={item.key} className="dropdown-menu--item">
-                <a href={item.link} className="dropdown-menu--link">
+              <li key={item.key} className="owdropdown-menu--item">
+                <a href={item.link} className="owdropdown-menu--link">
                   <div>
                     <span className="material-icons">{item.icon}</span>
                   </div>
-                  <span className="dropdown-menu--text">{item.text}</span>
+                  <span className="owdropdown-menu--text">{item.text}</span>
                 </a>
               </li>
             );
