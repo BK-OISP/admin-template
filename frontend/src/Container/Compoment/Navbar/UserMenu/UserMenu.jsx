@@ -14,7 +14,7 @@ const UserMenu = (props) => {
     { key: "clear", icon: "clear", text: "Log out", link: "#" },
   ];
   return (
-    <li className="nv--item owdropdown">
+    <li className="nv--item owdropdown avt-wrapper">
       <div className="avt" id={id}>
         <span
           className="material-icons "

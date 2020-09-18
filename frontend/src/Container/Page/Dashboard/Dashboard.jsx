@@ -10,11 +10,11 @@ const Dashboard = (props) => {
   return (
     <AdminLayout>
       <Container fluid>
-        <Row className="d-flex" noGutters={false}>
-          <TodoCard />
-          <TodoCard />
-          <TodoCard />
-          <TodoCard />
+        <Row className="d-flex justify-content-between">
+          <TodoCard type="primary" icon="analytics" header="100+" text="Todo" />
+          <TodoCard type="success" icon="analytics" header="100+" text="Todo" />
+          <TodoCard type="danger" icon="analytics" header="100+" text="Todo" />
+          <TodoCard type="warning" icon="analytics" header="100+" text="Todo" />
         </Row>
       </Container>
     </AdminLayout>

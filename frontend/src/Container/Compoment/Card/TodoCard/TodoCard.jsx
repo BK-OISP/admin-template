@@ -1,21 +1,25 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-const TodoCard = () => {
+const TodoCard = (props) => {
+  const { type, icon, header, text } = props;
   return (
-    <Col sm={6} md={3} className="counter bg-primary text-center">
+    <Col sm={6} md={3} className={`counter bg-${type} text-center`}>
       <Row>
         <Col>
-          <span class="material-icons">analytics</span>
+          <span className="material-icons">{icon}</span>
+        </Col>
+      </Row>
+      <Row className="counter--header">
+        <Col>
+          <h3>{header}</h3>
         </Col>
       </Row>
       <Row>
-        <Col>100+</Col>
-      </Row>
-      <Row>
-        <Col>Title</Col>
+        <Col>
+          <p>{text}</p>
+        </Col>
       </Row>
     </Col>
   );
