@@ -11,6 +11,10 @@ body {
   background: $main-bg-color;
   color: $main-color;
   line-height: unset;
+  .row {
+    margin-right: -10px;
+    margin-left: -5px;
+  }
 }
 
 .wrapper {
